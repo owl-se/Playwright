@@ -1,0 +1,27 @@
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    annotationProcessor("org.projectlombok:lombok:$lombokVersion")
+    testAnnotationProcessor("org.projectlombok:lombok:$lombokVersion")
+
+    implementation("org.projectlombok:lombok:$lombokVersion")
+
+}
+
+tasks.withType(Test) {
+//    systemProperties = System.getProperties()
+//    systemProperties.remove("java.endorsed.dirs") // needs to be removed from Java 9
+//    jvmArgs '--enable-preview'
+//    testLogging.showStandardStreams = true
+//    outputs.upToDateWhen { false }
+}

@@ -5,6 +5,11 @@ buildscript {
     }
 }
 
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
 repositories {
     mavenLocal()
     mavenCentral()
@@ -15,6 +20,7 @@ dependencies {
     testAnnotationProcessor("org.projectlombok:lombok:$lombokVersion")
 
     implementation("org.projectlombok:lombok:$lombokVersion")
+    implementation("com.microsoft.playwright:playwright:$playwrightVersion")
 
 }
 

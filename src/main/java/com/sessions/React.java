@@ -2,10 +2,9 @@ package com.sessions;
 
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserType;
-import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 
-public class TextSelectors {
+public class React {
 
     public static void main(String[] args) {
 
@@ -14,10 +13,6 @@ public class TextSelectors {
         launchOptions.setChannel("chrome");
         launchOptions.setHeadless(false);
         Browser browser = playwright.chromium().launch(launchOptions);
-
-        //text
-        Page page = browser.newPage();
-        page.locator("text");
 
     }
 }

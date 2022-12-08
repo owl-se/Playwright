@@ -1,8 +1,6 @@
 package com.sessions;
 
-import com.microsoft.playwright.Browser;
-import com.microsoft.playwright.BrowserType;
-import com.microsoft.playwright.Playwright;
+import com.microsoft.playwright.*;
 
 public class React {
 
@@ -13,6 +11,12 @@ public class React {
         launchOptions.setChannel("chrome");
         launchOptions.setHeadless(false);
         Browser browser = playwright.chromium().launch(launchOptions);
+
+        Page page = browser.newPage();
+        page.navigate("https://ru.reactjs.org/");
+        Locator l = page.locator("_react=i >> input").first();
+        l.click();
+        l.fill("ololo");
 
     }
 }
